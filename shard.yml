@@ -6,7 +6,7 @@ author:
 
 targets:
   curlystle:
-    main: bot.cr
+    main: curlystle.cr
 
 dependencies:
   tourmaline:
