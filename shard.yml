@@ -1,3 +1,17 @@
+name: curlystle
+version: 0.1.0
+
+author:
+- Lulzx
+
+targets:
+  curlystle:
+    main: bot.cr
+
 dependencies:
   tourmaline:
     github: watzon/tourmaline
+
+crystal: 0.24.1
+
+license: MIT
