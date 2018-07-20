@@ -14,4 +14,9 @@ bot.command("echo") do |message, params|
   bot.send_message(message.chat.id, text)
 end
 
+bot.on(TGBot::UpdateAction::Text) do |update|
+  text = update.message.not_nil!.text.not_nil!
+  bot.send_message(message.chat.id, #{text})
+end
+
 bot.poll
