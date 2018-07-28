@@ -6,7 +6,7 @@ author:
 
 targets:
   curlystle:
-    main: curlystle.cr
+    main: src/curlystle.cr
 
 dependencies:
   tourmaline:
