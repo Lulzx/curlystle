@@ -11,7 +11,7 @@ targets:
 dependencies:
   tourmaline:
     github: watzon/tourmaline
-  ngrok:
+
 
 
 crystal: 0.25.1
