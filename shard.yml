@@ -12,8 +12,6 @@ dependencies:
   tourmaline:
     github: watzon/tourmaline
 
-
-
-crystal: 0.25.1
+crystal: 0.24.1
 
 license: MIT
