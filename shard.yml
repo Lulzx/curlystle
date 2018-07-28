@@ -6,12 +6,12 @@ author:
 
 targets:
   curlystle:
-    main: src/curlystle.cr
+    main: curlystle.cr
 
 dependencies:
   tourmaline:
     github: watzon/tourmaline
 
-crystal: 0.24.1
+crystal: 0.25.1
 
 license: MIT
