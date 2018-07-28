@@ -12,7 +12,7 @@ dependencies:
   tourmaline:
     github: watzon/tourmaline
   ngrok:
-    github: watzon/ngrok.cr
+
 
 crystal: 0.25.1
 
