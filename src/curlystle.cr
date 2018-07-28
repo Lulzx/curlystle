@@ -1,7 +1,9 @@
+require "ngrok"
 require "tourmaline"
 
 alias TGBot = Tourmaline::Bot
 
+Ngrok.start({addr: "127.0.0.1:3400"}) do |ngrok|
 bot = TGBot::Client.new(ENV["API_KEY"])
 
 bot.command(["start", "help"]) do |message|
@@ -14,4 +16,6 @@ bot.command("echo") do |message, params|
   bot.send_message(message.chat.id, text)
 end
 
-bot.poll
+bot.set_webhook(ngrok.ngrok_url_https)
+  bot.serve("127.0.0.1", 3400)
+end
