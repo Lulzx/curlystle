@@ -12,6 +12,10 @@ dependencies:
   tourmaline:
     github: watzon/tourmaline
 
+development_dependencies:
+  ngrok:
+    github: watzon/ngrok.cr
+
 crystal: 0.25.1
 
 license: MIT
