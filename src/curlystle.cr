@@ -1,21 +1,8 @@
-
 require "tourmaline"
-
-alias TGBot = Tourmaline::Bot
-
-
-bot = TGBot::Client.new(ENV["API_KEY"])
-
-bot.command(["start", "help"]) do |message|
-  text = "Echo bot is a sample bot created with the awesome Tourmaline bot framework."
-  bot.send_message(message.chat.id, text)
-end
-
+bot = Tourmaline::Bot::Client.new(ENV["API_KEY"])
 bot.command("echo") do |message, params|
-  text = params.join(" ")
-  bot.send_message(message.chat.id, text)
+  text = params.join(" ")
+  bot.send_message(message.chat.id, text)
+  bot.delete_message(message.chat.id, message.message_id)
 end
-
 bot.poll
-
-
