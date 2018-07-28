@@ -2,10 +2,9 @@ require "tourmaline"
 
 bot = Tourmaline::Bot::Client.new(ENV["API_KEY"])
 
-bot.command("echo") do |message, params|
-  text = params.join(" ")
-  bot.send_message(message.chat.id, text)
-  bot.delete_message(message.chat.id, message.message_id+1)
+bot.on(TGBot::UpdateAction::Text) do |update|
+  text = update.message.not_nil!.text.not_nil!
+  puts "TEXT: #{text}"
 end
 
 bot.poll
