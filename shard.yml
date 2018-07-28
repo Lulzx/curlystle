@@ -11,8 +11,6 @@ targets:
 dependencies:
   tourmaline:
     github: watzon/tourmaline
-
-development_dependencies:
   ngrok:
     github: watzon/ngrok.cr
 
