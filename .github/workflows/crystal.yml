@@ -19,7 +19,10 @@ jobs:
     - name: Install dependencies
       run: shards install
     - name: Run build
-      run: crystal build src/curlystle.cr --release
+      run: mkdir -p bin
+           crystal -v
+           crystal build src/build.cr --release -o bin/bot
+           chmod +x bin/bot
     - name: Push the change
       run: |
           git config --global user.name 'Lulzx'
