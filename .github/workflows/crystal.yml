@@ -19,10 +19,7 @@ jobs:
     - name: Install dependencies
       run: shards install
     - name: Run build
-      run: mkdir -p bin
-           crystal -v
-           crystal build src/build.cr --release -o bin/bot
-           chmod +x bin/bot
+      run: mkdir -p bin && crystal build src/build.cr --release -o bin/bot && chmod +x bin/bot
     - name: Push the change
       run: |
           git config --global user.name 'Lulzx'
