@@ -20,3 +20,9 @@ jobs:
       run: shards install
     - name: Run build
       run: crystal build src/curlystle.cr --release
+    - name: Push the change
+      run: |
+          git config --global user.name 'Lulzx'
+          git config --global user.email 'wiserishabh@gmail.com'
+          git commit -am "automated builds" || true
+          git push
