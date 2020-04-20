@@ -19,7 +19,7 @@ jobs:
     - name: Install dependencies
       run: shards install
     - name: Run build
-      run: cd ../../.. && crystal build ./src/build.cr --release
+      run: ls && pwd && crystal build ./src/build.cr --release
     - name: Push the change
       run: |
           git config --global user.name 'Lulzx'
