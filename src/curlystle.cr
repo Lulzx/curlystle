@@ -1,8 +1,15 @@
 require "tourmaline"
 
-bot = Tourmaline::Bot::Client.new(ENV["API_KEY"])
-bot.on(Tourmaline::Bot::UpdateAction::Text) do |update|
-  text = update.message.not_nil!.text.not_nil!
-  bot.send_message(text.chat.id, #{text})
+class EchoBot < Tourmaline::Client
+  @[Command("echo")]
+  def echo_command(client, update)
+    if message = update.message
+      text = update.context["text"].as_s
+      message.respond(text)
+    end
+  end
 end
+
+API_KEY = "YOUR_BOT_API_KEY"
+bot = EchoBot.new(API_KEY)
 bot.poll
