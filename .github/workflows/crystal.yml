@@ -1,9 +1,7 @@
-name: Crystal CI
+name: Crystal Builds
 
 on:
   push:
-    branches: [ master ]
-  pull_request:
     branches: [ master ]
 
 jobs:
@@ -22,6 +20,8 @@ jobs:
       run: crystal build src/curlystle.cr --release
     - name: Push the change
       run: |
+          git clone https://github.com/Lulzx/curlystle.git
+          mv curlystle curlystle/curlystle && cd curlystle
           git config --global user.name 'Lulzx'
           git config --global user.email 'wiserishabh@gmail.com'
           git commit -am "automated builds" || true
